@@ -4,8 +4,10 @@ using UnrealBuildTool;
 
 public class CustomSettings : ModuleRules
 {
-	public CustomSettings(TargetInfo Target)
+	public CustomSettings(ReadOnlyTargetRules Target) : base(Target)
 	{
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
